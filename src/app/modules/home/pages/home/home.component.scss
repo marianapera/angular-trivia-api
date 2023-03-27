@@ -1,0 +1,20 @@
+.c-home {
+    &__buttons {
+        position: absolute;
+        width: 13.2rem;
+        left: calc(100% - 132px);
+        top: calc(50% - 32px);
+
+        &__btn {
+            height: 4.8rem;
+            width: 50%;
+            background-color: transparent;
+            color: #1e1e1e;
+
+            &:hover {
+                background-color: rgb(98, 0, 128);
+                color: #F5F5F5;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<main>
+  <div class="c-home__buttons">
+    <button class="c-button c-home__buttons__btn" (click)="openFilter()">Filter</button>
+    <button class="c-button c-home__buttons__btn" (click)="getOneQuestion()">Skip</button>
+  </div>
+  <app-question-filter
+    (filters)="receiveFilterData($event)"
+    (loadNextQuestion)="(getOneQuestion)"
+  ></app-question-filter>
+  <app-question-card [question]="data"></app-question-card>
+</main>
