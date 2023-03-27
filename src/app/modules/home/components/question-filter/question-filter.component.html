@@ -1,0 +1,33 @@
+<aside
+  [ngClass]="opened ? 'c-question-filter__open' : 'c-question-filter__close'"
+  class="c-question-filter"
+>
+  <form [formGroup]="form" (ngSubmit)="submitFilter()" class="c-question-filter__form">
+    <h2 class="c-question-filter__form__title">Question's Filter</h2>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Categories</mat-label>
+      <mat-select formControlName="categories" multiple>
+        <mat-option *ngFor="let cat of categList" [value]="cat">
+          {{ cat }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Difficulty</mat-label>
+      <mat-select formControlName="difficulty">
+        <mat-option *ngFor="let difficulty of difficultyList" [value]="difficulty">
+          {{ difficulty }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="c-question-filter__form__buttons">
+      <button (click)="closeFilter()" class="c-button c-question-filter__form__btn-reset" type="reset">
+        Close Filter
+      </button>
+      <button class="c-button c-question-filter__form__btn-submit" type="submit">Apply filters</button>
+    </div>
+  </form>
+</aside>

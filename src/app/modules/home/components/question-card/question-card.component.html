@@ -1,0 +1,15 @@
+<article class="c-question-card" *ngIf="question">
+  <h2 class="c-question-card__title">{{ question.question }}</h2>
+
+  <ul class="c-question-card__answers">
+    <li [style.width]="'50%'" *ngFor="let answer of question.answers.sort(); let i = index">
+      <button
+        (click)="sendAnswer(answer)"
+        [changeAnswerStyle]="sendAnswer(answer)"
+        class="c-button c-question-card__answer"
+      >
+        {{ answer }}
+      </button>
+    </li>
+  </ul>
+</article>
